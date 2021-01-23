@@ -1,0 +1,13 @@
+-remove preferedBottomSheet and write the Welcome in each page.
+-Left Drawer open the
+-change color Design
+
+
+=weekly
+-adjust 7 days Views
+-chevon arrow move the page
+-model and data for the months
+-
+
+=thisweek
+-edit view
