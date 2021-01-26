@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:my_roster/model/weekdays.dart';
 import 'package:my_roster/widgets/day_roster.dart';
+import 'package:my_roster/widgets/title_widget.dart';
 
 class ThisWeekPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ListView.builder(
-        itemCount: currentWeek.length,
-        itemBuilder: (context, index) => DayRoster(index: index),
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        TitleWidget(
+          greeting: 'Hello',
+          title: 'Bijaya',
+          message: 'You roster this week',
+        ),
+        Expanded(child: DayRoster()),
+      ],
     );
   }
 }

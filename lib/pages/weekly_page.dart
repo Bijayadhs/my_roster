@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_roster/model/weekdays.dart';
 import 'package:my_roster/widgets/seven_day.dart';
 import 'package:my_roster/widgets/summary.dart';
+import 'package:my_roster/widgets/title_widget.dart';
 
 class WeeklyPage extends StatefulWidget {
   @override
@@ -16,6 +17,11 @@ class _WeeklyPageState extends State<WeeklyPage> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        TitleWidget(
+          greeting: 'Hey',
+          title: 'Bijay',
+          message: 'You weekly shift',
+        ),
         Expanded(
           child: PageView.builder(
             controller: _controller,

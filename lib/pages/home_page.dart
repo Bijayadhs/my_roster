@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
 
   AppBar buildAppBar() {
     return AppBar(
-      elevation: 10,
+      elevation: 4,
       leading: IconButton(
         onPressed: () {},
         icon: Icon(Icons.menu),
@@ -41,63 +41,63 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
               Text(
-                'Today-${today}th',
-                style: TextStyle(color: secondaryColor, fontSize: 15),
-              ),
-              Text(
-                'Janaury 2021',
-                style: TextStyle(color: secondaryColor, fontSize: 15),
+                '${today}th Janaury 2021',
+                style: TextStyle(
+                  color: highlightColor,
+                  fontSize: 20,
+                  decoration: TextDecoration.underline,
+                ),
               ),
             ],
           ),
         ),
       ],
-      bottom: index == 0
-          ? PreferredSize(
-              preferredSize: Size.fromHeight(60),
-              child: Text(
-                'Settings',
-                style: TextStyle(
-                  fontSize: 34,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            )
-          : PreferredSize(
-              preferredSize: Size.fromHeight(120),
-              child: Padding(
-                padding: const EdgeInsets.only(right: 160),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    index == 2
-                        ? SizedBox(height: 0)
-                        : Text(
-                            'Hello,',
-                            style: TextStyle(
-                              fontSize: 34,
-                              fontWeight: FontWeight.w500,
-                              height: .1,
-                            ),
-                          ),
-                    Text(
-                      'Bijaya',
-                      style: TextStyle(
-                          fontSize: 40,
-                          fontWeight: FontWeight.w700,
-                          color: secondaryColor),
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      your[index],
-                      style:
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
-                    ),
-                    SizedBox(height: 8),
-                  ],
-                ),
-              ),
-            ),
+      // bottom: index == 0
+      //     ? PreferredSize(
+      //         preferredSize: Size.fromHeight(60),
+      //         child: Text(
+      //           'Settings',
+      //           style: TextStyle(
+      //             fontSize: 34,
+      //             fontWeight: FontWeight.w500,
+      //           ),
+      //         ),
+      //       )
+      //     : PreferredSize(
+      //         preferredSize: Size.fromHeight(120),
+      //         child: Padding(
+      //           padding: const EdgeInsets.only(right: 160),
+      //           child: Column(
+      //             crossAxisAlignment: CrossAxisAlignment.start,
+      //             children: <Widget>[
+      //               index == 2
+      //                   ? SizedBox(height: 0)
+      //                   : Text(
+      //                       'Hello,',
+      //                       style: TextStyle(
+      //                         fontSize: 34,
+      //                         fontWeight: FontWeight.w500,
+      //                         height: .1,
+      //                       ),
+      //                     ),
+      //               Text(
+      //                 'Bijaya',
+      //                 style: TextStyle(
+      //                     fontSize: 40,
+      //                     fontWeight: FontWeight.w700,
+      //                     color: secondaryColor),
+      //               ),
+      //               SizedBox(height: 8),
+      //               Text(
+      //                 your[index],
+      //                 style:
+      //                     TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+      //               ),
+      //               SizedBox(height: 8),
+      //             ],
+      //           ),
+      //         ),
+      //       ),
     );
   }
 
