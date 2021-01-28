@@ -18,6 +18,30 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            UserAccountsDrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.green[200],
+                ),
+                currentAccountPicture: CircleAvatar(
+                    backgroundColor: Colors.green[500],
+                    maxRadius: 5,
+                    child: Icon(Icons.person)),
+                accountName: Text('Bijaya'),
+                accountEmail: Text('bijay@gmail.com')),
+            CustomListTile(
+              Icons.next_week,
+              'My week',
+            ),
+            CustomListTile(
+              Icons.settings,
+              'Settings',
+            ),
+          ],
+        ),
+      ),
       appBar: buildAppBar(),
       bottomNavigationBar: buildBottomNavigationBar(),
       body: pages[index],
@@ -27,10 +51,10 @@ class _HomePageState extends State<HomePage> {
   AppBar buildAppBar() {
     return AppBar(
       elevation: 4,
-      leading: IconButton(
-        onPressed: () {},
-        icon: Icon(Icons.menu),
-      ),
+      // leading: IconButton(
+      //   onPressed: () {},
+      //   icon: Icon(Icons.menu),
+      // ),
       actions: [
         Padding(
           padding: const EdgeInsets.only(
@@ -52,52 +76,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ],
-      // bottom: index == 0
-      //     ? PreferredSize(
-      //         preferredSize: Size.fromHeight(60),
-      //         child: Text(
-      //           'Settings',
-      //           style: TextStyle(
-      //             fontSize: 34,
-      //             fontWeight: FontWeight.w500,
-      //           ),
-      //         ),
-      //       )
-      //     : PreferredSize(
-      //         preferredSize: Size.fromHeight(120),
-      //         child: Padding(
-      //           padding: const EdgeInsets.only(right: 160),
-      //           child: Column(
-      //             crossAxisAlignment: CrossAxisAlignment.start,
-      //             children: <Widget>[
-      //               index == 2
-      //                   ? SizedBox(height: 0)
-      //                   : Text(
-      //                       'Hello,',
-      //                       style: TextStyle(
-      //                         fontSize: 34,
-      //                         fontWeight: FontWeight.w500,
-      //                         height: .1,
-      //                       ),
-      //                     ),
-      //               Text(
-      //                 'Bijaya',
-      //                 style: TextStyle(
-      //                     fontSize: 40,
-      //                     fontWeight: FontWeight.w700,
-      //                     color: secondaryColor),
-      //               ),
-      //               SizedBox(height: 8),
-      //               Text(
-      //                 your[index],
-      //                 style:
-      //                     TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
-      //               ),
-      //               SizedBox(height: 8),
-      //             ],
-      //           ),
-      //         ),
-      //       ),
     );
   }
 
@@ -124,6 +102,29 @@ class _HomePageState extends State<HomePage> {
             ),
             label: 'Weekly'),
       ],
+    );
+  }
+}
+
+class CustomListTile extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  // final Function onTap;
+  const CustomListTile(
+    this.icon,
+    this.title,
+    // this.onTap,
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      splashColor: Colors.green[50],
+      onTap: () {},
+      child: ListTile(
+        leading: Icon(icon),
+        title: Text(title),
+      ),
     );
   }
 }

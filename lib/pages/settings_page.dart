@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:my_roster/model/settings.dart';
 
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends StatefulWidget {
+  @override
+  _SettingsPageState createState() => _SettingsPageState();
+}
+
+class _SettingsPageState extends State<SettingsPage> {
+  ScrollController controller = ScrollController();
+
   @override
   Widget build(BuildContext context) {
-    List<String> settings = [
-      'Week Start',
-      'Rate per hour',
-      'Sound',
-      'Theme',
-      'Reminder',
-      'Backup',
-      'Support',
-      'About'
-    ];
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(12.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -26,26 +24,60 @@ class SettingsPage extends StatelessWidget {
               color: Colors.purple[300],
             ),
           ),
-          SizedBox(height: 20),
-          Column(
-            children: settings
-                .map((setting) => Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          setting,
-                          style: TextStyle(
-                            fontSize: 24,
-                          ),
-                        ),
-                        Divider(
-                          height: 40,
-                          thickness: 2,
-                          endIndent: MediaQuery.of(context).size.width * 0.5,
-                        ),
-                      ],
-                    ))
-                .toList(),
+          SizedBox(height: 10),
+          Container(
+            height: 450,
+            child: ListView.builder(
+              // shrinkWrap: true,
+              controller: controller,
+              physics: BouncingScrollPhysics(),
+              itemCount: settings.length,
+              itemBuilder: (context, index) =>
+                  CustomSetup(setting: settings[index]),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class CustomSetup extends StatelessWidget {
+  final Setting setting;
+  const CustomSetup({this.setting});
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    return Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                setting.settingName,
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+              Container(
+                width: size.width * 0.4,
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    border: UnderlineInputBorder(),
+                    hintText: setting.defaultName,
+                    labelText: setting.settingName,
+                  ),
+                  keyboardType: TextInputType.number,
+                ),
+              ),
+            ],
+          ),
+          Divider(
+            height: 34,
+            thickness: 1,
           ),
         ],
       ),
