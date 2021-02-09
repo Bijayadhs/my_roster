@@ -13,7 +13,7 @@ class _SummaryState extends State<Summary> {
       height: 100,
       width: double.infinity,
       decoration: BoxDecoration(
-        color: rosterColor,
+        color: redColor,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
@@ -29,7 +29,7 @@ class _SummaryState extends State<Summary> {
                 "Total In Summary",
                 style: TextStyle(
                   fontSize: 20,
-                  color: Colors.purple[600],
+                  color: redLightColor,
                 ),
               ),
               SizedBox(height: 10),

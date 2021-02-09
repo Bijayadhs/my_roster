@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
               Text(
                 '${today}th Janaury 2021',
                 style: TextStyle(
-                  color: highlightColor,
+                  color: redColor,
                   fontSize: 20,
                   decoration: TextDecoration.underline,
                 ),
@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
   BottomNavigationBar buildBottomNavigationBar() {
     return BottomNavigationBar(
       currentIndex: index,
-      selectedItemColor: highlightColor,
+      selectedItemColor: redColor,
       unselectedItemColor: secondaryColor.withOpacity(0.3),
       onTap: (index) => setState(() => this.index = index),
       items: [

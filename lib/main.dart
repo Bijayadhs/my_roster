@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Roster App',
       theme: ThemeData(
-        primaryColor: primaryColor,
+        primaryColor: redColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: HomePage(),

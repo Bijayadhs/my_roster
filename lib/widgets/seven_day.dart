@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_roster/constants.dart';
 import 'package:my_roster/model/weekdays.dart';
 
 class SevenDay extends StatefulWidget {
@@ -22,12 +23,12 @@ class _SevenDayState extends State<SevenDay> {
     // }
 
     return Padding(
-      padding: const EdgeInsets.all(4.0),
+      padding: const EdgeInsets.all(16.0),
       child: Container(
         width: double.infinity,
         height: 40,
         decoration: BoxDecoration(
-          color: Colors.purple[300],
+          color: secondaryColor,
           borderRadius: BorderRadius.circular(16),
         ),
         child: Padding(

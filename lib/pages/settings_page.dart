@@ -26,7 +26,7 @@ class _SettingsPageState extends State<SettingsPage> {
           ),
           SizedBox(height: 10),
           Container(
-            height: 450,
+            height: 415,
             child: ListView.builder(
               // shrinkWrap: true,
               controller: controller,
@@ -59,11 +59,11 @@ class CustomSetup extends StatelessWidget {
               Text(
                 setting.settingName,
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 24,
                 ),
               ),
               Container(
-                width: size.width * 0.4,
+                width: size.width * 0.6,
                 child: TextFormField(
                   decoration: InputDecoration(
                     border: UnderlineInputBorder(),

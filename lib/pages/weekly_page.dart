@@ -16,11 +16,12 @@ class _WeeklyPageState extends State<WeeklyPage> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TitleWidget(
           greeting: 'Hey',
           title: 'Bijay',
-          message: 'You weekly shift',
+          message: 'You weekly shift is here.',
         ),
         Expanded(
           child: PageView.builder(
@@ -41,12 +42,12 @@ class _WeeklyPageState extends State<WeeklyPage> {
                             curve: Curves.easeIn,
                           );
                         }),
-                        icon: Icon(Icons.chevron_left),
+                        icon: Icon(Icons.chevron_left, size: 38),
                       ),
                       Text(
                         fromToWeeks[index].weekTitle,
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 24,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
@@ -59,7 +60,7 @@ class _WeeklyPageState extends State<WeeklyPage> {
                           );
                           print(selectedIndex);
                         }),
-                        icon: Icon(Icons.chevron_right),
+                        icon: Icon(Icons.chevron_right, size: 38),
                       ),
                     ],
                   ),
